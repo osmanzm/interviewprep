@@ -3,7 +3,7 @@ public class checkPermutation {
     //  Given two strings,write a method to decide if one is a permutation of the
     //other.
     public static void main(String[] args) throws NullPointerException{
-        System.out.println(perm("abc", "fgh"));
+        System.out.println(perm("dcab", "abcd"));
     }
 
     public static boolean perm(String one, String two){
@@ -17,11 +17,11 @@ public class checkPermutation {
             char oneChar = one.charAt(i);
             char twoChar = two.charAt(i);
 
-            if(!map1.containsKey(one.charAt(i))){
-                map1.put(one.charAt(i), 0);
+            if(!map1.containsKey(oneChar)){
+                map1.put(oneChar, 0);
             }
-            if(!map2.containsKey(two.charAt(i))){
-                map2.put(two.charAt(i), 0);
+            if(!map2.containsKey(twoChar)){
+                map2.put(twoChar, 0);
             }
             int oneInt = map1.get(oneChar);
             int twoInt = map2.get(twoChar);
@@ -36,5 +36,5 @@ public class checkPermutation {
     Analysis:   This runs in O(n) time. 2 Strings of length n are
     iterated through once and stored in a hashmap. Then, two maps
     are compared. If the two maps are identical, i.e. they both contain
-    the same amounts of each letter, then they are permutations of one another. 
+    the same amounts of each letter, then they are permutations of one another.
  */
